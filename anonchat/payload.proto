@@ -1,0 +1,63 @@
+syntax = "proto2";
+
+message Payload {
+    oneof payload {
+        Alert alert = 1;
+        Message message = 2;
+        Action action = 3;
+    }
+}
+
+message Alert {
+    enum Name {
+        NONE = 0;
+        BAD_CREDENTIALS = 1;
+        CONNECTED = 2;
+    }
+    required Name type = 1;
+}
+
+message MediaMessage {
+    required string caption = 1;
+    required string url = 2;
+    enum Type {
+        NONE = 0;
+        IMAGE = 1;
+        VIDEO = 2;
+        STICKER = 3;
+        DOCUMENT = 4;
+    }
+    required Type type = 3;
+    
+}
+
+message TextMessage {
+    required string text = 1;
+}
+
+message Message {
+    required string id = 1;
+    optional bool from_me = 2;
+    oneof message {
+        MediaMessage mediaMessage = 3;
+        TextMessage textMessage = 4;
+    }
+}
+
+message Action {
+    enum Name {
+        NONE = 0;
+        PAIR = 1;
+        PAIRED = 2;
+        CLOSED = 3;
+        WS_DISCONNECT = 4;
+        CONNECT = 5;
+        TIMEOUT = 6;
+        DUPLICATE = 7;
+        CLOSE = 9;
+    }
+    required Name name = 1;
+    optional bool from_me = 2;
+    optional string id = 3;
+    optional string key = 4;
+}
