@@ -1,3 +1,5 @@
 global-include *.pyi
 include */*.pyi
 include anonclient/payload_pb2.pyi
+recursive-include anonclient
+recursive-include .
