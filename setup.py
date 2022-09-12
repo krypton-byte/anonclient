@@ -4,7 +4,7 @@ from os import path
 base_dir = path.abspath(path.dirname(__file__))
 
 setup(
-  name = 'anonclient', 
+  name = 'anonclient',
   long_description=open(base_dir+'/README.md','r').read(),
   long_description_content_type='text/markdown',
   packages = ['anonclient'],
@@ -17,13 +17,13 @@ setup(
   url = 'https://github.com/krypton-byte/anonclient',
   download_url = 'https://github.com/krypton-byte/anonclient/archive/0.1.6.tar.gz',
   keywords = ['anonchat', 'client', 'api', 'fullduplex'],
-  install_requires=[           
+  install_requires=[
         'protobuf',
         'websockets',
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',      
-    'Intended Audience :: Developers',      
+    'Intended Audience :: Developers',
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3.9',
