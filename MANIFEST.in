@@ -1,2 +1,2 @@
-include *.pyi
+global-include *.pyi
 include */*.pyi
