@@ -1,6 +1,5 @@
 from __future__ import annotations
 from typing import Awaitable, Optional, Union
-from concurrent.futures import ThreadPoolExecutor
 from websockets.legacy.client import Connect
 from websockets.legacy.client import WebSocketClientProtocol
 from .payload_pb2 import Alert, Message, Action, Payload
@@ -8,7 +7,6 @@ import logging
 import asyncio
 logging.basicConfig(format='%(asctime)s <-> %(message)s', level=logging.INFO)
 logger = logging.getLogger('anonchat')
-exe = ThreadPoolExecutor(max_workers=5)
 class BadCredentials(Exception):
     pass
 
