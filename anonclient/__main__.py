@@ -1,6 +1,6 @@
 import logging
 import os
-from anonchat.payload_pb2 import Action
+from .payload_pb2 import Action
 import termios, sys
 from typing import Optional
 from .client import AnonChatAsync, logger
